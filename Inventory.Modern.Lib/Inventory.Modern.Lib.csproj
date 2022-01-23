@@ -8,12 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
     <PackageReference Include="Unity" Version="5.11.10" />
 	<PackageReference Include="CommandDotNet" Version="6.1.0-alpha.repl" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Inventory.Data\Inventory.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +28,9 @@
 	  </Reference>
 	  <Reference Include="DataToTable">
 	    <HintPath>..\..\DataToTable\DataToTable\bin\Release\net6.0\DataToTable.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Inventory.Data">
+		  <HintPath>..\..\Inventory.Data\Inventory.Data\bin\Release\net6.0\Inventory.Data.dll</HintPath>
 	  </Reference>
   </ItemGroup>
 
