@@ -1,10 +1,11 @@
 ﻿using CommandDotNet;
-using Core;
+using ModelHelper;
 using System.ComponentModel.DataAnnotations;
 
 namespace Inventory.Modern.Lib;
 
-public abstract class ArgUpdate : IArgumentModel, IId
+public abstract class ArgUpdate 
+    : IArgumentModel, IId
 {
     [Operand(
        "id")

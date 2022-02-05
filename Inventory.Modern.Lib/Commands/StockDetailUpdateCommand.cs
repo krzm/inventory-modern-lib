@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using CLI.Core;
-using CLI.Core.Lib;
+using CLIHelper;
+using CRUDCommandHelper;
 using Inventory.Data;
 
 namespace Inventory.Modern.Lib;

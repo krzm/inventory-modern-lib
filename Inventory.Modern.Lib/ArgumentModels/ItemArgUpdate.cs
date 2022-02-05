@@ -3,7 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Inventory.Modern.Lib;
 
-public class ItemArgUpdate : ArgUpdate
+public class ItemArgUpdate 
+    : ArgUpdate
 {
     [Option('n', nameof(Name)), MaxLength(25)]
     public string? Name { get; set; }

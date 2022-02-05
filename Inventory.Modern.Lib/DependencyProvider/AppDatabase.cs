@@ -1,11 +1,11 @@
-using Core;
-using Core.Lib;
+using EFCoreHelper;
 using Inventory.Data;
 using Unity;
 
 namespace Inventory.Modern.Lib;
 
-public class AppDatabase : UnityDependencyProvider
+public class AppDatabase 
+    : DIHelper.Unity.UnityDependencySet
 {
     public AppDatabase(
         IUnityContainer container) 
@@ -13,7 +13,7 @@ public class AppDatabase : UnityDependencyProvider
     {
     }
 
-    public override void RegisterDependencies()
+    public override void Register()
     {
         Container.RegisterSingleton<InventoryContext>();
 
