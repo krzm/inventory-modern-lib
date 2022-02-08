@@ -44,7 +44,7 @@ public class StockTable : TextTable<Stock>
 
 	private static string GetId(Stock e) => e.Id.ToString();
 
-	private static string GetItem(Stock e) => e.Item.Name;
+	private static string GetItem(Stock e) => e.Item != null ? e.Item.Name : "";
 
 	private static string GetItemId(Stock e) => e.ItemId.ToString();
 
