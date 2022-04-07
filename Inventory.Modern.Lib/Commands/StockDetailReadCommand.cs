@@ -2,6 +2,7 @@
 using CRUDCommandHelper;
 using DataToTable;
 using Inventory.Data;
+using Serilog;
 
 namespace Inventory.Modern.Lib;
 
@@ -11,8 +12,9 @@ public class StockDetailReadCommand
     public StockDetailReadCommand(
         IInventoryUnitOfWork unitOfWork
         , IOutput output
+        , ILogger log
         , IDataToText<StockDetail> textProvider)
-            : base(unitOfWork, output, textProvider)
+            : base(unitOfWork, output, log, textProvider)
     {
     }
 

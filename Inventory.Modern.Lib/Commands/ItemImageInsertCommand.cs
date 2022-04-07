@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using CLIHelper;
 using CRUDCommandHelper;
 using Inventory.Data;
+using Serilog;
 
 namespace Inventory.Modern.Lib;
 
@@ -10,9 +10,9 @@ public class ItemImageInsertCommand
 {
     public ItemImageInsertCommand(
         IInventoryUnitOfWork unitOfWork
-        , IOutput output
+        , ILogger log
         , IMapper mapper)
-            : base(unitOfWork, output, mapper)
+            : base(unitOfWork, log, mapper)
     {
     }
 
