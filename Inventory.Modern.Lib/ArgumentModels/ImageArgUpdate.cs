@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Inventory.Modern.Lib;
 
-public class ItemImageArgUpdate : ArgUpdate
+public class ImageArgUpdate : ArgUpdate
 {
 
     [Option('i', nameof(ItemId)), Range(1, int.MaxValue, ErrorMessage = "Id must be greater than zero")]

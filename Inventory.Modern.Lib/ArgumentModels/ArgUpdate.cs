@@ -1,15 +1,18 @@
 ﻿using CommandDotNet;
+using Inventory.Data;
 using ModelHelper;
 using System.ComponentModel.DataAnnotations;
 
 namespace Inventory.Modern.Lib;
 
 public abstract class ArgUpdate 
-    : IArgumentModel, IId
+    : Model 
+    , IArgumentModel
+    , IId
 {
     [Operand(
-       "id")
+       nameof(Id))
        , Required
-       , Range(1, int.MaxValue, ErrorMessage = "Id must be greater than zero")]
+       , Range(1, int.MaxValue, ErrorMessage = IdError)]
     public int Id { get; set; }
 }

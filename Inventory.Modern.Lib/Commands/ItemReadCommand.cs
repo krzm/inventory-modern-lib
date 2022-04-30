@@ -7,7 +7,7 @@ using Serilog;
 namespace Inventory.Modern.Lib;
 
 public class ItemReadCommand
-    : ReadCommand<IInventoryUnitOfWork, Item, ItemArgFilter>
+    : ReadCommand<IInventoryUnitOfWork, Item, ItemReadArg>
 {
     public ItemReadCommand(
         IInventoryUnitOfWork unitOfWork
@@ -18,7 +18,7 @@ public class ItemReadCommand
     {
     }
 
-    protected override List<Item> Get(ItemArgFilter model) =>
+    protected override List<Item> Get(ItemReadArg model) =>
         UnitOfWork.Item.Get(
             orderBy: t => t.OrderBy(p => p.Category!.Name)
             , includeProperties: nameof(Item.Category)).ToList();

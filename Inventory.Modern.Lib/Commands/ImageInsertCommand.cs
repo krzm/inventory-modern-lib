@@ -6,7 +6,7 @@ using Serilog;
 namespace Inventory.Modern.Lib;
 
 public class ImageInsertCommand
-    : InsertCommand<IInventoryUnitOfWork, Image, ItemImageArg>
+    : InsertCommand<IInventoryUnitOfWork, Image, ImageArg>
 {
     public ImageInsertCommand(
         IInventoryUnitOfWork unitOfWork

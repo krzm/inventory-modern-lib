@@ -7,7 +7,7 @@ using Serilog;
 namespace Inventory.Modern.Lib;
 
 public class TagReadCommand
-    : ReadCommand<IInventoryUnitOfWork, Tag, StockDetailArgFilter>
+    : ReadCommand<IInventoryUnitOfWork, Tag, SizeArgFilter>
 {
     public TagReadCommand(
         IInventoryUnitOfWork unitOfWork
@@ -18,7 +18,7 @@ public class TagReadCommand
     {
     }
 
-    protected override List<Tag> Get(StockDetailArgFilter model) =>
+    protected override List<Tag> Get(SizeArgFilter model) =>
         UnitOfWork.Tag.Get(
             orderBy: t => t.OrderBy(p => p.Id)).ToList();
 }

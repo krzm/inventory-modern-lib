@@ -7,7 +7,7 @@ using Serilog;
 namespace Inventory.Modern.Lib;
 
 public class SizeReadCommand
-    : ReadCommand<IInventoryUnitOfWork, Size, ItemDetailArgFilter>
+    : ReadCommand<IInventoryUnitOfWork, Size, SizeArgFilter>
 {
     public SizeReadCommand(
         IInventoryUnitOfWork unitOfWork
@@ -18,6 +18,6 @@ public class SizeReadCommand
     {
     }
 
-    protected override List<Size> Get(ItemDetailArgFilter model) =>
+    protected override List<Size> Get(SizeArgFilter model) =>
         UnitOfWork.Size.Get().ToList();
 }

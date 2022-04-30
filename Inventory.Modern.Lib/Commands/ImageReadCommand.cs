@@ -7,7 +7,7 @@ using Serilog;
 namespace Inventory.Modern.Lib;
 
 public class ImageReadCommand
-	: ReadCommand<IInventoryUnitOfWork, Image, ItemImageArgFilter>
+	: ReadCommand<IInventoryUnitOfWork, Image, ImageArgFilter>
 {
 	public ImageReadCommand(
 		IInventoryUnitOfWork unitOfWork
@@ -18,7 +18,7 @@ public class ImageReadCommand
 	{
 	}
 
-	protected override List<Image> Get(ItemImageArgFilter model)
+	protected override List<Image> Get(ImageArgFilter model)
     {
 		return UnitOfWork.Image.Get(
 			orderBy: t => t.OrderBy(p => p.ItemId)

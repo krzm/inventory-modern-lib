@@ -2,6 +2,7 @@
 
 namespace Inventory.Modern.Lib;
 
-public class StockDetailArgFilter : IArgumentModel
+public class CategoryArgFilter
+    : IArgumentModel
 {
 }

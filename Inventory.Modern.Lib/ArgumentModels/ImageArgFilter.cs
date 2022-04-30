@@ -2,6 +2,6 @@
 
 namespace Inventory.Modern.Lib;
 
-public class ItemArgFilter : IArgumentModel
+public class ImageArgFilter : IArgumentModel
 {
 }

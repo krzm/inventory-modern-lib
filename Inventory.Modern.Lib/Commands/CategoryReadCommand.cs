@@ -7,7 +7,7 @@ using Serilog;
 namespace Inventory.Modern.Lib;
 
 public class CategoryReadCommand 
-    : ReadCommand<IInventoryUnitOfWork, Category, ItemCategoryArgFilter>
+    : ReadCommand<IInventoryUnitOfWork, Category, CategoryArgFilter>
 {
     public CategoryReadCommand(
         IInventoryUnitOfWork unitOfWork
@@ -18,7 +18,7 @@ public class CategoryReadCommand
     {
     }
 
-    protected override List<Category> Get(ItemCategoryArgFilter model) =>
+    protected override List<Category> Get(CategoryArgFilter model) =>
         UnitOfWork.Category.Get(
             includeProperties: "Parent,Children").ToList();
 }

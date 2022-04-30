@@ -3,23 +3,23 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Inventory.Modern.Lib;
 
-public class ItemDetailArg : IArgumentModel
+public class SizeArgUpdate : ArgUpdate
 {
-    [Operand(nameof(Width))]
+    [Option('w', nameof(Width))]
     public double? Width { get; set; }
 
-    [Operand(nameof(Depth))]
+    [Option('e', nameof(Depth))]
     public double? Depth { get; set; }
 
-    [Operand(nameof(Heigth))]
+    [Option('i', nameof(Heigth))]
     public double? Heigth { get; set; }
 
-    [Operand(nameof(Diameter))]
+    [Option('a', nameof(Diameter))]
     public double? Diameter { get; set; }
 
-    [Operand(nameof(Volume))]
+    [Option('v', nameof(Volume))]
     public double? Volume { get; set; }
 
-    [Operand(nameof(Description)), MaxLength(250)]
+    [Option('d', nameof(Description)), MaxLength(250)]
     public string? Description { get; set; }
 }
