@@ -5,10 +5,10 @@ using Serilog;
 
 namespace Inventory.Modern.Lib;
 
-public class StockDetailInsertCommand
-    : InsertCommand<IInventoryUnitOfWork, StockDetail, StockDetailArg>
+public class SizeUpdateCommand
+    : UpdateCommand<IInventoryUnitOfWork, Size, ItemDetailArgUpdate, SizeUpdate>
 {
-    public StockDetailInsertCommand(
+    public SizeUpdateCommand(
         IInventoryUnitOfWork unitOfWork
         , ILogger log
         , IMapper mapper)
@@ -16,6 +16,6 @@ public class StockDetailInsertCommand
     {
     }
 
-    protected override void InsertEntity(StockDetail entity) =>
-        UnitOfWork.StockDetail.Insert(entity);
+    protected override Size GetById(int id) =>
+        UnitOfWork.Size.GetByID(id);
 }

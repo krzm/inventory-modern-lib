@@ -6,21 +6,21 @@ using Serilog;
 
 namespace Inventory.Modern.Lib;
 
-public class ItemImageReadCommand
-	: ReadCommand<IInventoryUnitOfWork, ItemImage, ItemImageArgFilter>
+public class ImageReadCommand
+	: ReadCommand<IInventoryUnitOfWork, Image, ItemImageArgFilter>
 {
-	public ItemImageReadCommand(
+	public ImageReadCommand(
 		IInventoryUnitOfWork unitOfWork
 		, IOutput output
         , ILogger log
-		, IDataToText<ItemImage> textProvider)
+		, IDataToText<Image> textProvider)
 			: base(unitOfWork, output, log, textProvider)
 	{
 	}
 
-	protected override List<ItemImage> Get(ItemImageArgFilter model)
+	protected override List<Image> Get(ItemImageArgFilter model)
     {
-		return UnitOfWork.ItemImage.Get(
+		return UnitOfWork.Image.Get(
 			orderBy: t => t.OrderBy(p => p.ItemId)
 			, includeProperties: "Item").ToList();
 	}

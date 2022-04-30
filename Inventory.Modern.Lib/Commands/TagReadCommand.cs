@@ -6,19 +6,19 @@ using Serilog;
 
 namespace Inventory.Modern.Lib;
 
-public class StockDetailReadCommand
-    : ReadCommand<IInventoryUnitOfWork, StockDetail, StockDetailArgFilter>
+public class TagReadCommand
+    : ReadCommand<IInventoryUnitOfWork, Tag, StockDetailArgFilter>
 {
-    public StockDetailReadCommand(
+    public TagReadCommand(
         IInventoryUnitOfWork unitOfWork
         , IOutput output
         , ILogger log
-        , IDataToText<StockDetail> textProvider)
+        , IDataToText<Tag> textProvider)
             : base(unitOfWork, output, log, textProvider)
     {
     }
 
-    protected override List<StockDetail> Get(StockDetailArgFilter model) =>
-        UnitOfWork.StockDetail.Get(
+    protected override List<Tag> Get(StockDetailArgFilter model) =>
+        UnitOfWork.Tag.Get(
             orderBy: t => t.OrderBy(p => p.Id)).ToList();
 }

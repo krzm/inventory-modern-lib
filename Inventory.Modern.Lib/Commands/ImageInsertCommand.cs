@@ -5,10 +5,10 @@ using Serilog;
 
 namespace Inventory.Modern.Lib;
 
-public class ItemImageInsertCommand
-    : InsertCommand<IInventoryUnitOfWork, ItemImage, ItemImageArg>
+public class ImageInsertCommand
+    : InsertCommand<IInventoryUnitOfWork, Image, ItemImageArg>
 {
-    public ItemImageInsertCommand(
+    public ImageInsertCommand(
         IInventoryUnitOfWork unitOfWork
         , ILogger log
         , IMapper mapper)
@@ -16,6 +16,6 @@ public class ItemImageInsertCommand
     {
     }
 
-    protected override void InsertEntity(ItemImage entity) =>
-        UnitOfWork.ItemImage.Insert(entity);
+    protected override void InsertEntity(Image entity) =>
+        UnitOfWork.Image.Insert(entity);
 }

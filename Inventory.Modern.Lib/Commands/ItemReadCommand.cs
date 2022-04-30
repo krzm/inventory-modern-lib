@@ -20,6 +20,6 @@ public class ItemReadCommand
 
     protected override List<Item> Get(ItemArgFilter model) =>
         UnitOfWork.Item.Get(
-            orderBy: t => t.OrderBy(p => p.ItemCategory.Name)
-            , includeProperties: nameof(Item.ItemCategory)).ToList();
+            orderBy: t => t.OrderBy(p => p.Category!.Name)
+            , includeProperties: nameof(Item.Category)).ToList();
 }

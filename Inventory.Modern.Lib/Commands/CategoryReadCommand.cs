@@ -6,19 +6,19 @@ using Serilog;
 
 namespace Inventory.Modern.Lib;
 
-public class ItemCategoryReadCommand 
-    : ReadCommand<IInventoryUnitOfWork, ItemCategory, ItemCategoryArgFilter>
+public class CategoryReadCommand 
+    : ReadCommand<IInventoryUnitOfWork, Category, ItemCategoryArgFilter>
 {
-    public ItemCategoryReadCommand(
+    public CategoryReadCommand(
         IInventoryUnitOfWork unitOfWork
         , IOutput output
         , ILogger log
-        , IDataToText<ItemCategory> textProvider)
+        , IDataToText<Category> textProvider)
             : base(unitOfWork, output, log, textProvider)
     {
     }
 
-    protected override List<ItemCategory> Get(ItemCategoryArgFilter model) =>
-        UnitOfWork.ItemCategory.Get(
+    protected override List<Category> Get(ItemCategoryArgFilter model) =>
+        UnitOfWork.Category.Get(
             includeProperties: "Parent,Children").ToList();
 }
