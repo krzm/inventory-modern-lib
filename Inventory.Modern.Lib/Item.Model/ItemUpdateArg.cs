@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Inventory.Modern.Lib;
 
-public class ItemArgUpdate 
+public class ItemUpdateArg 
     : ArgUpdate
 {
     [Option('n'
@@ -11,12 +11,17 @@ public class ItemArgUpdate
         , MaxLength(NameMaxLength)]
     public string? Name { get; set; }
 
+    [Option('d'
+        , nameof(Description))
+        , MaxLength(DescriptionMaxLength)]
+    public string? Description { get; set; }
+
     [Option('c'
         , nameof(CategoryId))
         , Range(1, int.MaxValue, ErrorMessage = IdError)]
     public int? CategoryId { get; set; }
 
-    [Option('d'
+    [Option('s'
         , nameof(SizeId))
         , Range(1, int.MaxValue, ErrorMessage = IdError)]
     public int? SizeId { get; set; }
