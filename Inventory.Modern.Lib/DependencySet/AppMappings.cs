@@ -19,7 +19,7 @@ public class AppMappings
         {
             c.CreateMap<ItemInsertArg, Item>();
             c.CreateMap<CategoryArg, Category>();
-            c.CreateMap<SizeArg, Size>();
+            c.CreateMap<SizeArgs, Size>();
             c.CreateMap<ImageArg, Image>();
             c.CreateMap<StockArg, Stock>();
 
