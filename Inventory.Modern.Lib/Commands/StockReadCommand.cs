@@ -21,5 +21,5 @@ public class StockReadCommand
     protected override List<Stock> Get(StockArgFilter model) =>
         UnitOfWork.Stock.Get(
             orderBy: t => t.OrderBy(p => p.Id)
-            , includeProperties:$"{nameof(Stock.Item)},{nameof(Stock.Container)}").ToList();
+            , includeProperties:$"{nameof(Stock.Item)}").ToList();
 }

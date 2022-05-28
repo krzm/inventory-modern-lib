@@ -13,25 +13,11 @@ public class StockArg
         , Range(1, int.MaxValue, ErrorMessage = IdError)]
     public int ItemId { get; set; }
 
-    [Operand(nameof(ContainerId))
-        , Required
+    [Operand(nameof(Description))
+        , MaxLength(DescriptionMaxLength)]
+    public string? Description { get; set; }
+
+    [Operand(nameof(TagId))
         , Range(1, int.MaxValue, ErrorMessage = IdError)]
-    public int ContainerId { get; set; }
-
-    [Operand
-        , Required
-        , DataType(DataType.Date)]
-    public DateTime? Stored { get; set; }
-
-    [Operand
-        , DataType(DataType.Date)]
-    public DateTime? Open { get; set; }
-
-    [Operand
-        , DataType(DataType.Date)]
-    public DateTime? Used { get; set; }
-    
-    [Operand(nameof(StockDetailId))
-        , Range(1, int.MaxValue, ErrorMessage = IdError)]
-    public int? StockDetailId { get; set; }
+    public int? TagId { get; set; }
 }
