@@ -8,22 +8,29 @@ public class SizeArgs
     : Model
     , IArgumentModel
 {
-    [Operand(nameof(Length))]
+    private const string DimensionError = "Dimension must be greater than zero";
+
+    [Option('l', "length")
+        , Range(0.0, int.MaxValue, ErrorMessage = DimensionError)]
     public double? Length { get; set; }
 
-    [Operand(nameof(Heigth))]
+    [Option('e', "heigth")
+        , Range(0.0, int.MaxValue, ErrorMessage = DimensionError)]
     public double? Heigth { get; set; }
 
-    [Operand(nameof(Depth))]
+    [Option('d', "depth")
+        , Range(0.0, int.MaxValue, ErrorMessage = DimensionError)]
     public double? Depth { get; set; }
     
-    [Operand(nameof(Diameter))]
+    [Option('i', "diameter")
+        , Range(0.0, int.MaxValue, ErrorMessage = DimensionError)]
     public double? Diameter { get; set; }
 
-    [Operand(nameof(Volume))]
+    [Option('v', "volume")
+        , Range(0.0, int.MaxValue, ErrorMessage = DimensionError)]
     public double? Volume { get; set; }
 
-    [Operand(nameof(Description))
+    [Option('s', "desc")
         , MaxLength(DescriptionMaxLength)]
     public string? Description { get; set; }
 }
