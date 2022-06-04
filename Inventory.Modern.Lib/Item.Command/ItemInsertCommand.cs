@@ -6,7 +6,7 @@ using Serilog;
 namespace Inventory.Modern.Lib;
 
 public class ItemInsertCommand
-    : InsertCommand<IInventoryUnitOfWork, Item, ItemInsertArg>
+    : InsertCommand<IInventoryUnitOfWork, Item, ItemInsertArgs>
 {
     public ItemInsertCommand(
         IInventoryUnitOfWork unitOfWork

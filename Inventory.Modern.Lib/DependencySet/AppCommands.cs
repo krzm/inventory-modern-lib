@@ -23,7 +23,7 @@ public class AppCommands
             .RegisterSingleton<IReadCommand<StockArgFilter>, StockReadCommand>()
             .RegisterSingleton<IReadCommand<SizeArgFilter>, SizeReadCommand>()
 
-            .RegisterSingleton<IInsertCommand<ItemInsertArg>, ItemInsertCommand>()
+            .RegisterSingleton<IInsertCommand<ItemInsertArgs>, ItemInsertCommand>()
             .RegisterSingleton<IInsertCommand<CategoryArg>, CategoryInsertCommand>()
             .RegisterSingleton<IInsertCommand<SizeArgs>, SizeInsertCommand>()
             .RegisterSingleton<IInsertCommand<ImageArg>, ImageInsertCommand>()

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Inventory.Modern.Lib;
 
-public class ItemInsertArg 
+public class ItemInsertArgs 
     : Model 
     , IArgumentModel
 {
@@ -13,8 +13,7 @@ public class ItemInsertArg
         , MaxLength(NameMaxLength)]
 	public string? Name { get; set; }
 
-    [Operand(nameof(Description))
-        , Required
+    [Option('d', "description")
         , MaxLength(DescriptionMaxLength)]
     public string? Description { get; set; }
 
@@ -23,7 +22,8 @@ public class ItemInsertArg
         , Range(1, int.MaxValue, ErrorMessage = IdError)]
 	public int CategoryId { get; set; }
 
-	[Operand(nameof(SizeId))
+	[Option('s', "sizeId")
+        , Required
         , Range(1, int.MaxValue, ErrorMessage = IdError)]
 	public int? SizeId { get; set; }
 }
