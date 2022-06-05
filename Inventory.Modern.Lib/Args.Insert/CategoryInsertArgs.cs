@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Inventory.Modern.Lib;
 
-public class CategoryArg 
+public class CategoryInsertArgs 
     : Model
     , IArgumentModel
 {

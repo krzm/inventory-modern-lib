@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Inventory.Modern.Lib;
 
-public class SizeArgs 
+public class SizeInsertArgs 
     : Model
     , IArgumentModel
 {
