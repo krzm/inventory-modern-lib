@@ -27,8 +27,9 @@ public class AppCommands
             .RegisterSingleton<IInsertCommand<CategoryInsertArgs>, CategoryInsertCommand>()
             .RegisterSingleton<IInsertCommand<SizeInsertArgs>, SizeInsertCommand>()
             .RegisterSingleton<IInsertCommand<ImageInsertArgs>, ImageInsertCommand>()
-            .RegisterSingleton<IInsertCommand<StockArg>, StockInsertCommand>()
+            .RegisterSingleton<IInsertCommand<StockInsertArgs>, StockInsertCommand>()
             .RegisterSingleton<IInsertCommand<SizeInsertArgs>, SizeInsertCommand>()
+            .RegisterSingleton<IInsertCommand<StockCountInsertArgs>, StockCountInsertCommand>()
 
             .RegisterSingleton<IUpdateCommand<ItemUpdateArg>, ItemUpdateCommand>()
             .RegisterSingleton<IUpdateCommand<CategoryArgUpdate>, CategoryUpdateCommand>()
