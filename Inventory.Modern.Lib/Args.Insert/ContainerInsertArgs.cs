@@ -1,10 +1,10 @@
-﻿using CommandDotNet;
+using CommandDotNet;
 using Inventory.Data;
 using System.ComponentModel.DataAnnotations;
 
 namespace Inventory.Modern.Lib;
 
-public class ItemInsertArgs 
+public class ContainerInsertArgs 
     : Model 
     , IArgumentModel
 {
@@ -21,6 +21,10 @@ public class ItemInsertArgs
         , Required
         , Range(1, int.MaxValue, ErrorMessage = IdError)]
 	public int CategoryId { get; set; }
+
+    [Option('p', "parentId")
+        , Range(1, int.MaxValue, ErrorMessage = IdError)]
+	public int? ParentId { get; set; }
 
 	[Option('s', "sizeId")
         , Range(1, int.MaxValue, ErrorMessage = IdError)]

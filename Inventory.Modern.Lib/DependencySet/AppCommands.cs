@@ -24,6 +24,7 @@ public class AppCommands
             .RegisterSingleton<IReadCommand<SizeArgFilter>, SizeReadCommand>()
 
             .RegisterSingleton<IInsertCommand<ItemInsertArgs>, ItemInsertCommand>()
+            .RegisterSingleton<IInsertCommand<ContainerInsertArgs>, ContainerInsertCommand>()
             .RegisterSingleton<IInsertCommand<CategoryInsertArgs>, CategoryInsertCommand>()
             .RegisterSingleton<IInsertCommand<SizeInsertArgs>, SizeInsertCommand>()
             .RegisterSingleton<IInsertCommand<ImageInsertArgs>, ImageInsertCommand>()
@@ -36,6 +37,8 @@ public class AppCommands
             .RegisterSingleton<IUpdateCommand<SizeArgUpdate>, SizeUpdateCommand>()
             .RegisterSingleton<IUpdateCommand<ImageArgUpdate>, ImageUpdateCommand>()
             .RegisterSingleton<IUpdateCommand<StockArgUpdate>, StockUpdateCommand>()
-            .RegisterSingleton<IUpdateCommand<SizeArgUpdate>, SizeUpdateCommand>();
+            .RegisterSingleton<IUpdateCommand<SizeArgUpdate>, SizeUpdateCommand>()
+
+            .RegisterSingleton<IStockContainerInsertCommand, StockContainerInsertCommand>();
     }
 }

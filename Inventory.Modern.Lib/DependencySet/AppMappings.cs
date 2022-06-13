@@ -18,6 +18,7 @@ public class AppMappings
         c => 
         {
             c.CreateMap<ItemInsertArgs, Item>();
+            c.CreateMap<ContainerInsertArgs, Container>();
             c.CreateMap<CategoryInsertArgs, Category>();
             c.CreateMap<SizeInsertArgs, Size>();
             c.CreateMap<ImageInsertArgs, Image>();
