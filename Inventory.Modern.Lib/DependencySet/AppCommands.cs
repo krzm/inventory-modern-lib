@@ -15,14 +15,15 @@ public class AppCommands
 
     public override void Register()
     {
-        Container
-            .RegisterSingleton<IReadCommand<ItemReadArg>, ItemReadCommand>()
-            .RegisterSingleton<IReadCommand<CategoryArgFilter>, CategoryReadCommand>()
-            .RegisterSingleton<IReadCommand<SizeArgFilter>, SizeReadCommand>()
-            .RegisterSingleton<IReadCommand<ImageArgFilter>, ImageReadCommand>()
-            .RegisterSingleton<IReadCommand<StockArgFilter>, StockReadCommand>()
-            .RegisterSingleton<IReadCommand<SizeArgFilter>, SizeReadCommand>()
+        RegisterInsertCommand();
+        RegisterInsertManyToManyCommand();
+        RegisterUpdateCommand();
+        RegisterReadCommand();
+    }
 
+    private void RegisterInsertCommand()
+    {
+        Container
             .RegisterSingleton<IInsertCommand<ItemInsertArgs>, ItemInsertCommand>()
             .RegisterSingleton<IInsertCommand<ContainerInsertArgs>, ContainerInsertCommand>()
             .RegisterSingleton<IInsertCommand<CategoryInsertArgs>, CategoryInsertCommand>()
@@ -31,14 +32,34 @@ public class AppCommands
             .RegisterSingleton<IInsertCommand<StockInsertArgs>, StockInsertCommand>()
             .RegisterSingleton<IInsertCommand<SizeInsertArgs>, SizeInsertCommand>()
             .RegisterSingleton<IInsertCommand<StockCountInsertArgs>, StockCountInsertCommand>()
+            .RegisterSingleton<IInsertCommand<StateInsertArgs>, StateInsertCommand>();
+    }
 
-            .RegisterSingleton<IUpdateCommand<ItemUpdateArg>, ItemUpdateCommand>()
-            .RegisterSingleton<IUpdateCommand<CategoryArgUpdate>, CategoryUpdateCommand>()
-            .RegisterSingleton<IUpdateCommand<SizeArgUpdate>, SizeUpdateCommand>()
-            .RegisterSingleton<IUpdateCommand<ImageArgUpdate>, ImageUpdateCommand>()
-            .RegisterSingleton<IUpdateCommand<StockArgUpdate>, StockUpdateCommand>()
-            .RegisterSingleton<IUpdateCommand<SizeArgUpdate>, SizeUpdateCommand>()
-
+    private void RegisterInsertManyToManyCommand()
+    {
+        Container
             .RegisterSingleton<IStockContainerInsertCommand, StockContainerInsertCommand>();
+    }
+
+    private void RegisterUpdateCommand()
+    {
+        Container
+                    .RegisterSingleton<IUpdateCommand<ItemUpdateArg>, ItemUpdateCommand>()
+                    .RegisterSingleton<IUpdateCommand<CategoryArgUpdate>, CategoryUpdateCommand>()
+                    .RegisterSingleton<IUpdateCommand<SizeArgUpdate>, SizeUpdateCommand>()
+                    .RegisterSingleton<IUpdateCommand<ImageArgUpdate>, ImageUpdateCommand>()
+                    .RegisterSingleton<IUpdateCommand<StockArgUpdate>, StockUpdateCommand>()
+                    .RegisterSingleton<IUpdateCommand<SizeArgUpdate>, SizeUpdateCommand>();
+    }
+
+    private void RegisterReadCommand()
+    {
+        Container
+            .RegisterSingleton<IReadCommand<ItemReadArg>, ItemReadCommand>()
+            .RegisterSingleton<IReadCommand<CategoryArgFilter>, CategoryReadCommand>()
+            .RegisterSingleton<IReadCommand<SizeArgFilter>, SizeReadCommand>()
+            .RegisterSingleton<IReadCommand<ImageArgFilter>, ImageReadCommand>()
+            .RegisterSingleton<IReadCommand<StockArgFilter>, StockReadCommand>()
+            .RegisterSingleton<IReadCommand<SizeArgFilter>, SizeReadCommand>();
     }
 }

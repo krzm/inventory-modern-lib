@@ -24,6 +24,7 @@ public class AppMappings
             c.CreateMap<ImageInsertArgs, Image>();
             c.CreateMap<StockInsertArgs, Stock>();
             c.CreateMap<StockCountInsertArgs, StockCount>();
+            c.CreateMap<StateInsertArgs, State>();
 
             c.CreateMap<ItemUpdateArg, ItemUpdate>();
             c.CreateMap<CategoryArgUpdate, CategoryUpdate>();
