@@ -38,18 +38,19 @@ public class AppCommands
     private void RegisterInsertManyToManyCommand()
     {
         Container
-            .RegisterSingleton<IStockContainerInsertCommand, StockContainerInsertCommand>();
+            .RegisterSingleton<IStockContainerInsertCommand, StockContainerInsertCommand>()
+            .RegisterSingleton<IStockStateInsertCommand, StockStateInsertCommand>();
     }
 
     private void RegisterUpdateCommand()
     {
         Container
-                    .RegisterSingleton<IUpdateCommand<ItemUpdateArg>, ItemUpdateCommand>()
-                    .RegisterSingleton<IUpdateCommand<CategoryArgUpdate>, CategoryUpdateCommand>()
-                    .RegisterSingleton<IUpdateCommand<SizeArgUpdate>, SizeUpdateCommand>()
-                    .RegisterSingleton<IUpdateCommand<ImageArgUpdate>, ImageUpdateCommand>()
-                    .RegisterSingleton<IUpdateCommand<StockArgUpdate>, StockUpdateCommand>()
-                    .RegisterSingleton<IUpdateCommand<SizeArgUpdate>, SizeUpdateCommand>();
+            .RegisterSingleton<IUpdateCommand<ItemUpdateArg>, ItemUpdateCommand>()
+            .RegisterSingleton<IUpdateCommand<CategoryArgUpdate>, CategoryUpdateCommand>()
+            .RegisterSingleton<IUpdateCommand<SizeArgUpdate>, SizeUpdateCommand>()
+            .RegisterSingleton<IUpdateCommand<ImageArgUpdate>, ImageUpdateCommand>()
+            .RegisterSingleton<IUpdateCommand<StockArgUpdate>, StockUpdateCommand>()
+            .RegisterSingleton<IUpdateCommand<SizeArgUpdate>, SizeUpdateCommand>();
     }
 
     private void RegisterReadCommand()
